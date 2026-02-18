@@ -449,7 +449,11 @@ export class QmdMemoryManager implements MemorySearchManager {
         parsed = parseQmdQueryJson(result.stdout, result.stderr);
       }
     } catch (err) {
-      if (!mcporterEnabled && qmdSearchCommand !== "query" && this.isUnsupportedQmdOptionError(err)) {
+      if (
+        !mcporterEnabled &&
+        qmdSearchCommand !== "query" &&
+        this.isUnsupportedQmdOptionError(err)
+      ) {
         log.warn(
           `qmd ${qmdSearchCommand} does not support configured flags; retrying search with qmd query`,
         );
