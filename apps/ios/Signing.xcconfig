@@ -11,5 +11,7 @@ OPENCLAW_SHARE_BUNDLE_ID = ai.openclaw.ios.share
 OPENCLAW_APP_PROFILE = ai.openclaw.ios Development
 OPENCLAW_SHARE_PROFILE = ai.openclaw.ios.share Development
 
+// Keep local includes after defaults: xcconfig is evaluated top-to-bottom,
+// so later assignments in local files override the defaults above.
 #include? ".local-signing.xcconfig"
 #include? "LocalSigning.xcconfig"
